@@ -29,16 +29,7 @@
 <body>
 
 <!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
+
 <!-- ***** Preloader End ***** -->
 
 
@@ -438,38 +429,4 @@
 <!-- ***** Contact Us Area Ends ***** -->
 
 <!-- ***** Footer Start ***** -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; 2020 Training Studio
 
-                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a></p>
-
-                <!-- You shall support us a little via PayPal to info@templatemo.com -->
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="{{asset('js/jquery-2.1.0.min.js')}}"></script>
-
-<!-- Bootstrap -->
-<script src="{{asset('js/popper.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-
-<!-- Plugins -->
-<script src="{{asset('js/scrollreveal.min.js')}}"></script>
-<script src="{{asset('js/waypoints.min.js')}}"></script>
-<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
-<script src="{{asset('js/imgfix.min.js')}}"></script>
-<script src="{{asset('js/mixitup.js')}}"></script>
-<script src="{{asset('js/accordions.js')}}"></script>
-
-<!-- Global Init -->
-<script src="{{asset('js/custom.js')}}"></script>
-
-</body>
-</html>
