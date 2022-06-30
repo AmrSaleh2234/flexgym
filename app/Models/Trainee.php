@@ -10,7 +10,6 @@ class Trainee extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'id',
         'start_date',
         'end_date',
         'payed',
