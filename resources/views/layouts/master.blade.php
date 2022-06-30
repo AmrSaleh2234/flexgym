@@ -20,7 +20,7 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/templatemo-training-studio.css')}}">
 
@@ -87,6 +87,7 @@
 <script src="{{asset('js/imgfix.min.js')}}"></script>
 <script src="{{asset('js/mixitup.js')}}"></script>
 <script src="{{asset('js/accordions.js')}}"></script>
+<script src="{{asset('js/all.min.js')}}"></script>
 
 <!-- Global Init -->
 <script src="{{asset('js/custom.js')}}"></script>

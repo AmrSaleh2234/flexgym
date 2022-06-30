@@ -20,7 +20,7 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/templatemo-training-studio.css')}}">
 

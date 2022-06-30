@@ -75,4 +75,22 @@ class TraineeController extends Controller
 
         return view('trainee.create')->with('msg', "trainee created successfully");
     }
+    public function allTrainees()//show all doctors for admin
+    {
+        $data =Trainee::all();
+
+        return view('trainee.all',compact('data'));
+    }
+    public function expiredTrainees()//show all doctors for admin
+    {
+        $data =Trainee::all();
+
+        return view('trainee.expired',compact('data'));
+    }
+    public function destroy(Trainee $trainee)//delete doctor by admin
+    {
+
+        $trainee->delete();
+        return redirect()->back();
+    }
 }
