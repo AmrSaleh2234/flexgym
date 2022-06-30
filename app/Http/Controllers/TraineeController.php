@@ -37,8 +37,35 @@ class TraineeController extends Controller
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
 
-        $trainee = Trainee::all();
+        $trainee = Trainee::orderBy('id','ASC')->get();
+        $trainneCount = count($trainee);
+
+        if ($trainneCount == 0) {
+            $id=1;
+        } elseif ($trainneCount == 1) {
+         $id=2;
+        }
+        elseif ($trainee[0]['id']!=1)
+        {
+         $id=1;
+        }
+        else {
+
+            for ($i = 0; $i < $trainneCount - 1; $i++) {
+
+                if($trainee[$i+1]['id']-$trainee[$i]['id'] !=1)
+                {
+                    $id=$trainee[$i]['id']+1;
+                    break;
+                }
+            }
+        }
+        if ($id==0)
+        {
+            $id = $trainee[$trainneCount-1]['id']+1;
+        }
         Trainee::create([
+            'id' => $id,
             'name' => $request->name,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
