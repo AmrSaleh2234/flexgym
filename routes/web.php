@@ -28,6 +28,8 @@ Route::get('trainer/create',[\App\Http\Controllers\TrainerController::class,'cre
 Route::post('trainer/store',[\App\Http\Controllers\TrainerController::class,'store'])->name('trainer.store');
 Route::get('trainer/all',[\App\Http\Controllers\TrainerController::class,'allTrainers'])->name('trainer.all');
 Route::get('trainer/delete/{user}',[\App\Http\Controllers\TrainerController::class,'destroy'])->name('trainer.delete');
+Route::get('trainee/create',[\App\Http\Controllers\TraineeController::class,'create'])->name('trainee.create');
+Route::post('trainee/store',[\App\Http\Controllers\TraineeController::class,'store'])->name('trainee.store');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
