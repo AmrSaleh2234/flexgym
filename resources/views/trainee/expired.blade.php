@@ -2,9 +2,9 @@
 @section('content')
     <div class="container table-responsive">
         <table class="table">
-            <thead>
+            <thead
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Name</th>
                 <th scope="col">start date</th>
                 <th scope="col">end date</th>
