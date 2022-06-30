@@ -13,13 +13,13 @@
                 <th scope="col">operations</th>
             </tr>
             </thead>
-            <?php $i=1?>
+
             <tbody>
             @foreach($data as $item)
 
 
                 <tr>
-                    <th scope="row">{{$i}}</th>
+                    <th scope="row">{{$item->id}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->start_date}}</td>
                     <td>{{$item->end_date}}</td>
@@ -32,7 +32,7 @@
 
                 </tr>
 
-                <?php $i++;?>
+
             @endforeach
             </tbody>
         </table>
