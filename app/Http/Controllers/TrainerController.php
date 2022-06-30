@@ -46,4 +46,16 @@ class TrainerController extends Controller
         ]);
         return  view('trainer.create')->with('msg',"trainer created successfully");
     }
+    public function allTrainers()//show all doctors for admin
+    {
+        $data =User::all()->where('role','1');
+
+        return view('trainer.all',compact('data'));
+    }
+    public function destroy(User $user)//delete doctor by admin
+    {
+
+        $user->delete();
+        return redirect()->back();
+    }
 }
