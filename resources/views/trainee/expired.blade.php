@@ -2,7 +2,7 @@
 @section('content')
     <div class="container table-responsive">
         <table class="table">
-            <thead
+            <thead>
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Name</th>

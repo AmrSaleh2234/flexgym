@@ -29,8 +29,8 @@ class TraineeController extends Controller
             'name' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
-            'payed' => 'required|integer|min:1|max:2000',
-            'not_payed' => 'required|integer|min:1|max:2000',
+            'payed' => 'required|integer|min:0|max:2000',
+            'not_payed' => 'required|integer|min:0|max:2000',
 
         ]);
         if ($validator->fails()) {
