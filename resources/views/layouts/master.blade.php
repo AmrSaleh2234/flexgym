@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
 
@@ -65,7 +65,7 @@
     </div>
 </header>
 
-<div style="margin-top: 170px">
+<div style="margin-top: 140px">
     @yield('content')
 </div>
 
@@ -75,7 +75,7 @@
             <div class="col-lg-12">
                 <p>Copyright &copy; {{date("Y")}} Flex Gym
 
-                    - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110" class="tm-text-link bold" target="_parent">Amr Saleh</a></p>
+                    - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110" class="tm-text-link " target="_parent" style="font-weight: 600">Amr Saleh</a></p>
 
                 <!-- You shall support us a little via PayPal to info@templatemo.com -->
 

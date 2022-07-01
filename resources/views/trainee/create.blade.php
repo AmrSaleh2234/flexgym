@@ -10,20 +10,20 @@
             <div class=" alert alert-success  w-75 m-auto">{{$msg}}</div>
             <div class="mb-5"></div>
         @endif
-        <div class="edit_password">
+        <div class="edit_password" style="direction: rtl">
             <form action="{{route('trainee.store')}}" method="post"
-                  class="d-flex  flex-column align-items-center  add_doctor" style="padding: 0 100px">
+                  class="d-flex  flex-column align-items-center  " style="padding: 0 100px">
                 @csrf
                 <h4 class="m-auto" style="font-size: 30px ; font-weight: bold">Add <span style="color: #ed563b">trainee</span></h4>
                 <div class="mb-4"></div>
-                <input type="text" name="name" placeholder="  Enter Name" value="{{ old('name') }}"
+                <input type="text" name="name" placeholder="ادخل اسم المستخدم" value="{{ old('name') }}"
                        class="form-control @error('name') is-invalid @enderror">
                 @error('name')
                 <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
                 <strong>{{ $message }}</strong>
             </span>
                 @enderror
-                <label class="align-self-start ml-5" style="font-size:18px ; font-weight: 500" >Enter <span style="color: #ed563b">start date</span> </label>
+                <label class="align-self-start mr-5" style="font-size:18px ; font-weight: 500" >ادخل <span style="color: #ed563b;font-weight: 600">معاد بدأ الاشتراك </span> </label>
                 <input type="date" name="start_date" placeholder="dd-mm-yyyy" value="{{ old('start_date') }}"
                        class="form-control @error('start_date') is-invalid @enderror" min="1997-01-01">
                 @error('start_date')
@@ -31,7 +31,7 @@
                 <strong>{{ $message }}</strong>
             </span>
                 @enderror
-                <label class="align-self-start ml-5" style="font-size:18px ; font-weight: 500" >Enter <span style="color: #ed563b">end date</span> </label>
+                <label class="align-self-start mr-5" style="font-size:18px ; font-weight: 500" >أدخل <span style="color: #ed563b;font-weight: 600">معاد نهاية الاشتراك</span> </label>
                 <input type="date" name="end_date" placeholder="dd-mm-yyyy" value="{{ old('end_date') }}"
                        class="form-control @error('end_date') is-invalid @enderror" min="1997-01-01">
                 @error('end_date')
@@ -40,14 +40,14 @@
             </span>
                 @enderror
 
-                <input type="number" name="payed" placeholder="  Enter payed money " value="{{ old('payed') }}"
+                <input type="number" name="payed" placeholder=" أدخل المبلغ المدفوع " value="{{ old('payed') }}"
                        class="form-control @error('payed') is-invalid @enderror">
                 @error('payed')
                 <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
                 <strong>{{ $message }}</strong>
             </span>
                 @enderror
-                <input type="number" name="not_payed" placeholder="  Enter not payed money " value="{{ old('not_payed') }}"
+                <input type="number" name="not_payed" placeholder="  أدخل المبلغ المتبقي " value="{{ old('not_payed') }}"
                        class="form-control @error('not_payed') is-invalid @enderror">
                 @error('not_payed')
                 <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
