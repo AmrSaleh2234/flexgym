@@ -102,6 +102,12 @@
 
 <!-- Global Init -->
 <script src="{{asset('js/custom.js')}}"></script>
+<script>
+    function submitSearchTraineeForm()
+    {
+        formSearchTrainee.submit();
+    }
+</script>
 
 </body>
 </html>

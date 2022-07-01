@@ -1,5 +1,18 @@
 @extends('layouts.master',['allTrainees'=>''])
 @section('content')
+    <div class="container mb-4 pl-5 pr-5">
+        <form class="input-group rounded search_input  " id="formSearchTrainee"
+              action="{{route('trainee.search')}}" type="get">
+
+            <input type="search" class="form-control rounded" name="search" placeholder="Search" aria-label="Search"
+                   aria-describedby="search-addon" id="search_course"/>
+            <label class="input-group-text border-0" id="search-addon" for="search_course"
+                   onclick="submitSearchTraineeForm()">
+                <i class="fas fa-search"></i>
+            </label>
+        </form>
+    </div>
+
     <div class="container table-responsive">
         <table class="table">
             <thead>

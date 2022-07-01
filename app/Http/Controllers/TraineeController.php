@@ -120,6 +120,13 @@ class TraineeController extends Controller
         ]);
         return redirect()->back()->with('msg','updated successfully ');
     }
+
+    public function search()
+    {
+        $search = $_GET['search'];
+        $data = Trainee::where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%')->get();
+        return view('trainee.all', compact('data'));
+    }
     public function destroy(Trainee $trainee)//delete doctor by admin
     {
 

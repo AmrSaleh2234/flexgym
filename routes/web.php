@@ -36,5 +36,6 @@ Route::get('trainee/expired',[\App\Http\Controllers\TraineeController::class,'ex
 Route::get('trainee/delete/{trainee}',[\App\Http\Controllers\TraineeController::class,'destroy'])->name('trainee.delete');
 Route::get('trainee/edit/{trainee}',[\App\Http\Controllers\TraineeController::class,'edit'])->name('trainee.edit');
 Route::post('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');
+Route::get('trainee/search',[\App\Http\Controllers\TraineeController::class,'search'])->name('trainee.search');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
