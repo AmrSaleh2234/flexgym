@@ -27,7 +27,7 @@ class TraineeController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)//admin store doctor
+    public function store(Request $request)//admin or trainer store trainee
     {
         $id = 0;
         $validator = Validator::make($request->all(), [
@@ -91,6 +91,34 @@ class TraineeController extends Controller
         $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->get();
 
         return view('trainee.expired',compact('data'));
+    }
+
+    public function edit(Trainee $trainee)
+    {
+        return view('trainee.edit',compact('trainee'));
+    }
+    public function update( Request $request , Trainee $trainee)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'payed' => 'required|integer|min:0|max:2000',
+            'not_payed' => 'required|integer|min:0|max:2000',
+
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
+        $trainee->update([
+
+            'name' => $request->name,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'payed' => $request->payed,
+            'not_payed' => $request->not_payed,
+        ]);
+        return redirect()->back()->with('msg','updated successfully ');
     }
     public function destroy(Trainee $trainee)//delete doctor by admin
     {

@@ -33,6 +33,7 @@ Route::post('trainee/store',[\App\Http\Controllers\TraineeController::class,'sto
 Route::get('trainee/all',[\App\Http\Controllers\TraineeController::class,'allTrainees'])->name('trainee.all');
 Route::get('trainee/expired',[\App\Http\Controllers\TraineeController::class,'expiredTrainees'])->name('trainee.expired');
 Route::get('trainee/delete/{trainee}',[\App\Http\Controllers\TraineeController::class,'destroy'])->name('trainee.delete');
-Route::get('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');
+Route::get('trainee/edit/{trainee}',[\App\Http\Controllers\TraineeController::class,'edit'])->name('trainee.edit');
+Route::post('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
