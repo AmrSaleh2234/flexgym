@@ -66,8 +66,8 @@
                         <li class="scroll-to-section"><a href="{{route('profile.index')}}"
                                                          class="@if(isset($profile))active @endif">Profile</a></li>
 
-                        <li class="main-button"><a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log
-                                Out</a>
+                        <li class="main-button">
+                            <a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log Out</a>
                             <form method="post" action="{{route('logout')}}" style="display: none" id="logout-form">@csrf</form>
                         </li>
 
