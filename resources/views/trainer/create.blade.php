@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master',['createTrainers'=>''])
 @section('content')
     <div class="container ">
         @if($errors->any())
@@ -12,9 +12,9 @@
         @endif
         <div class="edit_password">
             <form action="{{route('trainer.store')}}" method="post"
-                  class="d-flex  flex-column align-items-center p-5 add_doctor">
+                  class="d-flex  flex-column align-items-center  add_doctor"  style="padding: 0 100px">
                 @csrf
-                <h4 class="m-auto">Add <span style="color: #ed563b">trainer</span></h4>
+                <h4 class="m-auto" style="font-size: 30px ; font-weight: bold">Add <span style="color: #ed563b">trainer</span></h4>
                 <div class="mb-4"></div>
                 <input type="text" name="name" placeholder="  Enter Name" value="{{ old('name') }}"
                        class="form-control @error('name') is-invalid @enderror">

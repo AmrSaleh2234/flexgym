@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master',['allTrainees'=>''])
 @section('content')
     <div class="container table-responsive">
         <table class="table">
@@ -26,7 +26,9 @@
                     <td>{{$item->payed}}</td>
                     <td>{{$item->not_payed}}</td>
                     <td>
-                        <a class="btn btn-danger " style="  cursor: pointer; margin-right: 10px" href="{{route('trainee.delete',$item)}}"><i class="fa-solid fa-trash"></i></a>
+                       @if(auth()->user()->role ==0)
+                            <a class="btn btn-danger " style="  cursor: pointer; margin-right: 10px" href="{{route('trainee.delete',$item)}}"><i class="fa-solid fa-trash"></i></a>
+                        @endif
                         <a class="btn btn-primary " style="  cursor: pointer" href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i> </a>
                     </td>
 

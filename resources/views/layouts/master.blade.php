@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Training Studio - Free CSS Template</title>
+    <title>Flex Gym</title>
     <!--
 
     TemplateMo 548 Training Studio
@@ -23,26 +23,37 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/templatemo-training-studio.css')}}">
+    <style >
+        .nav li a
+        {
+            color: black  !important;
+        }
+    </style>
 
 </head>
 
 <body>
-<header class="header-area header-sticky" style="background-color: #757272 ;">
+<header class="header-area header-sticky " style="background-color: rgba(250,250,250,0.99)">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">FLEX<em> GYM</em></a>
+                    <a href="index.html" class="logo" style="color: black">FLEX<em> GYM</em></a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#features">About</a></li>
-                        <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                        <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                        <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    <ul class="nav" >
+                        <li class="scroll-to-section"><a href="{{route('trainee.create')}}" class="@if(isset($createTrainees))active @endif" >create Trainee</a></li>
+                        <li class="scroll-to-section"><a href="{{route('trainee.all')}}" class="@if(isset($allTrainees))active @endif">Trainees</a></li>
+                        <li class="scroll-to-section"><a href="{{route('trainee.expired')}}" class="@if(isset($expiredTrainees))active @endif">Expired Trainee</a></li>
+
+                        @if(auth()->user()->role==0)
+                            <li class="scroll-to-section"><a href="{{route('trainer.all')}}" class="@if(isset($allTrainers))active @endif">All Trainers</a></li>
+                            <li class="scroll-to-section"><a href="{{route('trainer.create')}}" class="@if(isset($createTrainers))active @endif">Create Trainers</a></li>
+                            <li class="scroll-to-section"><a href="{{route('trainee.create')}}" class="@if(isset($Finance))active @endif">Finance</a></li>
+                        @endif
+                        <li class="scroll-to-section"><a href="{{route('profile.index')}}" class="@if(isset($profile))active @endif">Profile</a></li>
+                        <li class="main-button"><a href="{{route('logout')}}" style="color: #FFFFFF !important;">Log Out</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -54,7 +65,7 @@
     </div>
 </header>
 
-<div style="margin-top: 200px">
+<div style="margin-top: 170px">
     @yield('content')
 </div>
 
@@ -62,9 +73,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; 2020 Training Studio
+                <p>Copyright &copy; {{date("Y")}} Flex Gym
 
-                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a></p>
+                    - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110" class="tm-text-link bold" target="_parent">Amr Saleh</a></p>
 
                 <!-- You shall support us a little via PayPal to info@templatemo.com -->
 

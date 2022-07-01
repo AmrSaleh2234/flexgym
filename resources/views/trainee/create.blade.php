@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master',['createTrainees'=>''])
 @section('content')
     <div class="container ">
         @if($errors->any())
@@ -12,7 +12,7 @@
         @endif
         <div class="edit_password">
             <form action="{{route('trainee.store')}}" method="post"
-                  class="d-flex  flex-column align-items-center p-5 add_doctor">
+                  class="d-flex  flex-column align-items-center  add_doctor" style="padding: 0 100px">
                 @csrf
                 <h4 class="m-auto" style="font-size: 30px ; font-weight: bold">Add <span style="color: #ed563b">trainee</span></h4>
                 <div class="mb-4"></div>

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master',['expiredTrainees'=>''])
 @section('content')
     <div class="container table-responsive">
         <table class="table">

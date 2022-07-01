@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master',['editTrainees'=>''])
 @section('content')
     <div class="container ">
         @if($errors->any())
