@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
 
@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
 
     <title>Flex Gym</title>
     <!--
@@ -23,10 +25,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/templatemo-training-studio.css')}}">
-    <style >
-        .nav li a
-        {
-            color: black  !important;
+    <style>
+        .nav li a {
+            color: black !important;
         }
     </style>
 
@@ -42,19 +43,36 @@
                     <a href="index.html" class="logo" style="color: black">FLEX<em> GYM</em></a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav" >
-                        <li class="scroll-to-section"><a href="{{route('trainee.create')}}" class="@if(isset($createTrainees))active @endif" >create Trainee</a></li>
-                        <li class="scroll-to-section"><a href="{{route('trainee.all')}}" class="@if(isset($allTrainees))active @endif">Trainees</a></li>
-                        <li class="scroll-to-section"><a href="{{route('trainee.expired')}}" class="@if(isset($expiredTrainees))active @endif">Expired Trainee</a></li>
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="{{route('trainee.create')}}"
+                                                         class="@if(isset($createTrainees))active @endif">create
+                                Trainee</a></li>
+                        <li class="scroll-to-section"><a href="{{route('trainee.all')}}"
+                                                         class="@if(isset($allTrainees))active @endif">Trainees</a></li>
+                        <li class="scroll-to-section"><a href="{{route('trainee.expired')}}"
+                                                         class="@if(isset($expiredTrainees))active @endif">Expired
+                                Trainee</a></li>
 
                         @if(auth()->user()->role==0)
-                            <li class="scroll-to-section"><a href="{{route('trainer.all')}}" class="@if(isset($allTrainers))active @endif">All Trainers</a></li>
-                            <li class="scroll-to-section"><a href="{{route('trainer.create')}}" class="@if(isset($createTrainers))active @endif">Create Trainers</a></li>
-                            <li class="scroll-to-section"><a href="{{route('trainee.create')}}" class="@if(isset($Finance))active @endif">Finance</a></li>
+                            <li class="scroll-to-section"><a href="{{route('trainer.all')}}"
+                                                             class="@if(isset($allTrainers))active @endif">All
+                                    Trainers</a></li>
+                            <li class="scroll-to-section"><a href="{{route('trainer.create')}}"
+                                                             class="@if(isset($createTrainers))active @endif">Create
+                                    Trainers</a></li>
+                            <li class="scroll-to-section"><a href="{{route('trainee.create')}}"
+                                                             class="@if(isset($Finance))active @endif">Finance</a></li>
                         @endif
-                        <li class="scroll-to-section"><a href="{{route('profile.index')}}" class="@if(isset($profile))active @endif">Profile</a></li>
-                        <li class="main-button"><a href="{{route('logout')}}" style="color: #FFFFFF !important;">Log Out</a></li>
+                        <li class="scroll-to-section"><a href="{{route('profile.index')}}"
+                                                         class="@if(isset($profile))active @endif">Profile</a></li>
+
+                        <li class="main-button"><a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log
+                                Out</a>
+                            <form method="post" action="{{route('logout')}}" style="display: none" id="logout-form">@csrf</form>
+                        </li>
+
                     </ul>
+
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -75,7 +93,8 @@
             <div class="col-lg-12">
                 <p>Copyright &copy; {{date("Y")}} Flex Gym
 
-                    - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110" class="tm-text-link " target="_parent" style="font-weight: 600">Amr Saleh</a></p>
+                    - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110"
+                                      class="tm-text-link " target="_parent" style="font-weight: 600">Amr Saleh</a></p>
 
                 <!-- You shall support us a little via PayPal to info@templatemo.com -->
 
@@ -103,8 +122,7 @@
 <!-- Global Init -->
 <script src="{{asset('js/custom.js')}}"></script>
 <script>
-    function submitSearchTraineeForm()
-    {
+    function submitSearchTraineeForm() {
         formSearchTrainee.submit();
     }
 </script>

@@ -38,4 +38,8 @@ Route::get('trainee/edit/{trainee}',[\App\Http\Controllers\TraineeController::cl
 Route::post('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');
 Route::get('trainee/search',[\App\Http\Controllers\TraineeController::class,'search'])->name('trainee.search');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
