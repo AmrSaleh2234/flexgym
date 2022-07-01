@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Trainee;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class TraineeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function create()//admin add doctor
     {
 
@@ -77,13 +82,13 @@ class TraineeController extends Controller
     }
     public function allTrainees()//show all doctors for admin
     {
-        $data =Trainee::all();
+        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->get();
 
         return view('trainee.all',compact('data'));
     }
     public function expiredTrainees()//show all doctors for admin
     {
-        $data =Trainee::all();
+        $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->get();
 
         return view('trainee.expired',compact('data'));
     }
