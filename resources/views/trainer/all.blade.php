@@ -21,7 +21,7 @@
                     <th scope="row">{{$i}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->email}}</td>
-                    <td>
+                    <td class="">
                         <a class="btn btn-danger " style="  cursor: pointer; margin-right: 10px" href="{{route('trainee.delete',$item)}}"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>

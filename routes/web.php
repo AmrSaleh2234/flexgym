@@ -43,6 +43,7 @@ Route::get('trainee/delete/{trainee}',[\App\Http\Controllers\TraineeController::
 ################################################## end trainee ######################################################################
 ######################################################## start finance ################################################################
 Route::get('finance/index',[\App\Http\Controllers\FinanceController::class,'index'])->name('finance.index');
+Route::post('finance/Date',[\App\Http\Controllers\FinanceController::class,'financeDate'])->name('finance.date');
 ############################################################ end finance ##############################################################
 ##################################################### Auth ###########################################################################
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
