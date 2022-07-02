@@ -490,11 +490,18 @@ header
     display: none;
   }
 }
+@media (max-width: 360px) {
+    .edit_password form
+    {
+        padding: 0 !important;
+    }
+}
 
 @media (max-width: 767px) {
   .header-area .main-nav .logo {
     color: #1e1e1e;
   }
+
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
     color: #ed563b!important;
