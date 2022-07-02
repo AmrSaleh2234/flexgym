@@ -477,7 +477,10 @@ header
 .header-area.header-sticky .nav li a.active {
   color: #ed563b;
 }
-
+.text-color
+{
+    color: #ed563b !important;
+}
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
     padding-left: 12px;

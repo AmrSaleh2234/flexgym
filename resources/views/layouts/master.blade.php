@@ -54,17 +54,17 @@
                                 Trainee</a></li>
 
                         @if(auth()->user()->role==0)
-                            <li class="scroll-to-section"><a href="{{route('trainer.all')}}"
-                                                             class="@if(isset($allTrainers))active @endif">All
+                            <li class="scroll-to-section">
+                                <a href="{{route('trainer.all')}}" class="@if(isset($allTrainers))active @endif">All
                                     Trainers</a></li>
-                            <li class="scroll-to-section"><a href="{{route('trainer.create')}}"
-                                                             class="@if(isset($createTrainers))active @endif">Create
+                            <li class="scroll-to-section">
+                                <a href="{{route('trainer.create')}}" class="@if(isset($createTrainers))active @endif">Create
                                     Trainers</a></li>
-                            <li class="scroll-to-section"><a href="{{route('trainee.create')}}"
-                                                             class="@if(isset($Finance))active @endif">Finance</a></li>
+                            <li class="scroll-to-section">
+                                <a href="{{route('finance.index')}}" class="@if(isset($finance))active @endif">Finance</a></li>
                         @endif
-                        <li class="scroll-to-section"><a href="{{route('profile.index')}}"
-                                                         class="@if(isset($profile))active @endif">Profile</a></li>
+                        <li class="scroll-to-section">
+                            <a href="{{route('profile.index')}}" class="@if(isset($profile))active @endif">Profile</a></li>
 
                         <li class="main-button">
                             <a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log Out</a>

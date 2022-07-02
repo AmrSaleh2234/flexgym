@@ -56,6 +56,7 @@
                         <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
                         <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
                         @if(auth()->check())
+                            <li class="scroll-to-section"><a href="{{route('trainee.all')}}" style="color: #b8f1d4">dashboard</a></li>
                             <li class="main-button">
                                 <a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log Out</a>
                                 <form method="post" action="{{route('logout')}}" style="display: none" id="logout-form">@csrf</form>
@@ -250,51 +251,34 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
                 <div class="trainer-item">
                     <div class="image-thumb">
-                        <img style="width: 280px;height: 256px" src="{{asset('images/Mohamed.jpeg')}}" alt="">
+                        <img style="height: 310px" src="{{asset('images/Mohamed.jpeg')}}" alt="">
                     </div>
                     <div class="down-content">
 
-                        <span style="font-weight: bold">Mohamed Mostfa </span>
-                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                        <span style="font-weight: bold">captain: Mohamed Mostfa </span>
+                        <p>Captain Mohamed Mostfa is trainer fitness , cardio and train program women , He is manager of flex gym .</p>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="trainer-item">
                     <div class="image-thumb">
-                        <img style="width: 280px;height: 256px" src="{{asset('images/Ramy.jpeg')}}" alt="">
+                        <img style="height: 310px" src="{{asset('images/Ramy.jpeg')}}" alt="">
                     </div>
                     <div class="down-content">
 
-                        <span style="font-weight: bold">Ramy </span>
-                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                        <span style="font-weight: bold">captain: Ramy </span>
+                        <p>Captain Ramy is trainer fitness and cardio, He is assistant in flex gym .</p>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="trainer-item">
-                    <div class="image-thumb">
-                        <img src="{{asset('images/third-trainer.jpg')}}" alt="">
-                    </div>
-                    <div class="down-content">
-                        <span>Power Trainer</span>
-                        <h4>Paul D. Newman</h4>
-                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
