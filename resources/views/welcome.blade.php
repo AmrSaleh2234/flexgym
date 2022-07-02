@@ -115,7 +115,7 @@
                         <div class="right-content">
                             <h4>Basic Fitness Program</h4>
                             <p>Fitness program you can train with any machine in gym except cardio machines .</p>
-                            <p class="text-color">Price: 175 LE</p>
+                            <p class="text-color">Price: 200 LE</p>
 
                         </div>
                     </li>
@@ -126,7 +126,7 @@
                         <div class="right-content">
                             <h4>Burn Fat Program</h4>
                             <p>you can train with burn fat and cardio machines only .</p>
-                            <p class="text-color">Price: 200 LE</p>
+                            <p class="text-color">Price: 250 LE</p>
                         </div>
                     </li>
 
@@ -141,7 +141,7 @@
                         <div class="right-content">
                             <h4>Fitness And Burn Fat Course</h4>
                             <p>You can train with any machine in gym and cardio machines .</p>
-                            <p class="text-color">Price: 275 LE</p>
+                            <p class="text-color">Price: 300 LE</p>
                         </div>
                     </li>
                     <li class="feature-item">
@@ -151,7 +151,7 @@
                         <div class="right-content">
                             <h4>Women Training Program </h4>
                             <p>This program special for woman only and captin train them with fitness gym and cardion gym  .</p>
-                            <p class="text-color">Price: 275 LE</p>
+                            <p class="text-color">Price: 200 LE</p>
                         </div>
 
                 </ul>
