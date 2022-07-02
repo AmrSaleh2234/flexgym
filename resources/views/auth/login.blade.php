@@ -53,8 +53,8 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="" style="color: rgb(255, 255, 255) !important;">
-                                    {{ __('Login') }}
+                                <button type="submit" class="main-btn d-flex align-items-center" style="color: rgb(255, 255, 255) !important;height: 45px">
+                                  Login
                                 </button>
 
                                 @if (Route::has('password.request'))
