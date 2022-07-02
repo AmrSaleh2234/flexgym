@@ -40,7 +40,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo" style="color: black">FLEX<em> GYM</em></a>
+                    <a href="{{route('landpage')}}" class="logo" style="color: black">FLEX<em> GYM</em></a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">

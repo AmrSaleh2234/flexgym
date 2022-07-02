@@ -3,7 +3,7 @@
 
     <div class="container  text-right" style="direction: rtl">
 
-        <h2 class="text-center mb-3 ">snapshot <span class="text-color">accounting table</span></h2>
+        <h2 class="text-center mb-3 " style="font-size: 30px ; font-weight: bold">snapshot <span class="text-color">accounting table</span></h2>
 
         <div class="d-flex mb-4">
             <h3 class="text-color "> المبلغ المحصل : </h3>
