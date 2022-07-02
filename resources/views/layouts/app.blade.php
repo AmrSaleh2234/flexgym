@@ -38,10 +38,8 @@
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                                <li class="scroll-to-section"><a href="#features">About</a></li>
-                                <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                                <li class="scroll-to-section" style="margin-right: 20px"><a href="{{route('landpage')}}" class="active">Home</a></li>
+
                                 @if(auth()->check())
                                     <li class="scroll-to-section"><a href="{{route('trainee.all')}}" style="color: #b8f1d4">dashboard</a></li>
                                     <li class="main-button">
