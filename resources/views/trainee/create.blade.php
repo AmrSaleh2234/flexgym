@@ -50,10 +50,17 @@
                 <input type="number" name="not_payed" placeholder="  أدخل المبلغ المتبقي " value="{{ old('not_payed') }}"
                        class="form-control @error('not_payed') is-invalid @enderror">
                 @error('not_payed')
-                <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
-                <strong>{{ $message }}</strong>
-            </span>
+                    <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
+                    <strong>{{ $message }}</strong>
+                    </span>
                 @enderror
+                <select class="form-select" aria-label="Default select example" name="program" style="width: 90%;margin-bottom: 30px; padding: 7px 14px;">
+                    <option value="0" selected>جيم</option>
+                    <option value="1">تخسيس</option>
+                    <option value="2">جيم و تخسيس</option>
+                    <option value="3">سيدات</option>
+                </select>
+
                 <button type="submit" class="main-btn">submit</button>
 
             </form>

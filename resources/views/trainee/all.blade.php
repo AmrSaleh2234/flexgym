@@ -14,16 +14,17 @@
     </div>
 
     <div class="container table-responsive">
-        <table class="table">
+        <table class="table" style="direction: rtl">
             <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">Name</th>
-                <th scope="col">start date</th>
-                <th scope="col">expired date</th>
-                <th scope="col">payed</th>
-                <th scope="col">not payed</th>
-                <th scope="col">operations</th>
+                <th scope="col">الرقم</th>
+                <th scope="col">الاسم</th>
+                <th scope="col">بدايه الاشتراك</th>
+                <th scope="col">نهاية الاشتراك</th>
+                <th scope="col">المدفوع</th>
+                <th scope="col">لم يدفع بعد</th>
+                <th scope="col">النظام</th>
+                <th scope="col">العمليات</th>
             </tr>
             </thead>
 
@@ -39,15 +40,24 @@
                     <td>{{$item->payed}}</td>
                     <td>{{$item->not_payed}}</td>
                     <td>
-                       @if(auth()->user()->role ==0)
+                        @if($item->program==0)
+                            جيم
+                        @elseif($item->program==1)
+                            تخسيس
+                        @elseif($item->program==2)
+                            جيم و تخسيس
+                        @else
+                            سيدات
+                        @endif()
+                    </td>
+                    <td>
+                        <a class="btn btn-primary " style="  cursor: pointer" href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i> </a>
+                        @if(auth()->user()->role ==0)
                             <a class="btn btn-danger " style="  cursor: pointer; margin-right: 10px" href="{{route('trainee.delete',$item)}}"><i class="fa-solid fa-trash"></i></a>
                         @endif
-                        <a class="btn btn-primary " style="  cursor: pointer" href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i> </a>
                     </td>
 
                 </tr>
-
-
             @endforeach
             </tbody>
         </table>

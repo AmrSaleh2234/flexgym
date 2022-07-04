@@ -76,6 +76,7 @@ class TraineeController extends Controller
             'end_date' => $request->end_date,
             'payed' => $request->payed,
             'not_payed' => $request->not_payed,
+            'program' => $request->program,
         ]);
 
         return view('trainee.create')->with('msg', "trainee created successfully");
@@ -106,6 +107,7 @@ class TraineeController extends Controller
             'payed' => 'required|integer|min:0|max:2000',
             'not_payed' => 'required|integer|min:0|max:2000',
 
+
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all());
@@ -117,6 +119,7 @@ class TraineeController extends Controller
             'end_date' => $request->end_date,
             'payed' => $request->payed,
             'not_payed' => $request->not_payed,
+            'program' => $request->program,
         ]);
         return redirect()->back()->with('msg','updated successfully ');
     }
@@ -124,12 +127,23 @@ class TraineeController extends Controller
     public function search()
     {
         $search = $_GET['search'];
-        $data = Trainee::where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%')->get();
+        $data = Trainee::where(function ($query)use($search)
+        {
+            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
+        })->where('end_date','>=',Carbon::today('EET'))->get();
         return view('trainee.all', compact('data'));
+    }
+    public function searchInExpired()
+    {
+        $search = $_GET['search'];
+        $data = Trainee::where(function ($query)use($search)
+        {
+            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
+        })->where('end_date','<',Carbon::today('EET'))->get();
+        return view('trainee.expired', compact('data'));
     }
     public function destroy(Trainee $trainee)//delete doctor by admin
     {
-
         $trainee->delete();
         return redirect()->back();
     }

@@ -54,6 +54,13 @@
                 <strong>{{ $message }}</strong>
             </span>
                 @enderror
+                <select class="form-select" aria-label="Default select example" name="program" style="width: 90%;margin-bottom: 30px; padding: 7px 14px;">
+                    <option value="0" @if($trainee->program ==0)selected @endif>جيم</option>
+                    <option value="1" @if($trainee->program ==1)selected @endif>تخسيس</option>
+                    <option value="2" @if($trainee->program ==2)selected @endif>جيم و تخسيس</option>
+                    <option value="3" @if($trainee->program ==3)selected @endif>سيدات</option>
+                </select>
+
                 <button type="submit" class="main-btn">submit</button>
 
             </form>

@@ -15,6 +15,7 @@ class Trainee extends Model
         'end_date',
         'payed',
         'not_payed',
+        'program'
 
 
     ];
