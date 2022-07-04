@@ -58,11 +58,12 @@
                     </td>
 
                 </tr>
-
-
             @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="container d-flex justify-content-center">
+        {{ $data->links() }}
     </div>
 
 @stop
