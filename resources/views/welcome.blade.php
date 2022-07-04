@@ -55,7 +55,7 @@
                         <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
                         <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
                         @if(auth()->check())
-                            <li class="scroll-to-section"><a href="{{route('trainee.all')}}" style="color: #b8f1d4">dashboard</a></li>
+                            <li class="scroll-to-section"><a href="{{route('trainee.all')}}" style="color: #b8f1d4 !important;">dashboard</a></li>
                             <li class="main-button">
                                 <a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log Out</a>
                                 <form method="post" action="{{route('logout')}}" style="display: none" id="logout-form">@csrf</form>
