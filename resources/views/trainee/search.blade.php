@@ -80,7 +80,7 @@
     </div>
 </header>
 
-<div class="container table-responsive" style="margin-top: 106px">
+<div class="container table-responsive" style="margin-top: 130px">
     <table class="table" style="direction: rtl">
         <thead>
         <tr>
