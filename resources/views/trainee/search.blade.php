@@ -34,10 +34,6 @@
 
 <body>
 
-<!-- ***** Preloader Start ***** -->
-
-<!-- ***** Preloader End ***** -->
-
 
 <!-- ***** Header Area Start ***** -->
 <header class="header-area header-sticky " style="background-color: rgba(250,250,250,0.99)">
@@ -62,7 +58,7 @@
                                 </label>
                             </form>
                         </li>
-                        <li class="scroll-to-section mr-3"><a href="#top" style="color: black">Home</a></li>
+                        <li class="scroll-to-section mr-3"><a href="{{route('landpage')}}" style="color: black">Home</a></li>
                         <li class="main-button">
                             <a href="{{route('logout')}}" style="color: #FFFFFF !important;"  onclick="event.preventDefault();document.getElementById('logout-form').submit()">Log Out</a>
                             <form method="post" action="{{route('logout')}}" style="display: none" id="logout-form">@csrf</form>
@@ -122,8 +118,8 @@
         @endforeach
         </tbody>
     </table>
-
 </div>
+
 <div class="container d-flex justify-content-center">
     {{ $data->links() }}
 </div>
