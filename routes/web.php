@@ -39,6 +39,7 @@ Route::get('trainee/expired',[\App\Http\Controllers\TraineeController::class,'ex
 Route::get('trainee/edit/{trainee}',[\App\Http\Controllers\TraineeController::class,'edit'])->name('trainee.edit');
 Route::post('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');
 Route::get('trainee/search',[\App\Http\Controllers\TraineeController::class,'search'])->name('trainee.search');
+Route::get('trainee/search/member',[\App\Http\Controllers\TraineeController::class,'searchForMembers'])->name('trainee.searchMembers');
 Route::get('trainee/searchExpired',[\App\Http\Controllers\TraineeController::class,'searchInExpired'])->name('trainee.searchExpired');
 Route::get('trainee/delete/{trainee}',[\App\Http\Controllers\TraineeController::class,'destroy'])->name('trainee.delete');
 ################################################## end trainee ######################################################################

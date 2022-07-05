@@ -13,7 +13,7 @@ class TraineeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('searchForMembers');
     }
     public function create()//admin add doctor
     {
@@ -83,13 +83,13 @@ class TraineeController extends Controller
     }
     public function allTrainees()//show all doctors for admin
     {
-        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(30);
+        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(50);
 
         return view('trainee.all',compact('data'));
     }
     public function expiredTrainees()//show all doctors for admin
     {
-        $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(30);
+        $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(50);
 
         return view('trainee.expired',compact('data'));
     }
@@ -130,8 +130,17 @@ class TraineeController extends Controller
         $data = Trainee::where(function ($query)use($search)
         {
             $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
-        })->where('end_date','>=',Carbon::today('EET'))->cursorPaginate(30);
+        })->where('end_date','>=',Carbon::today('EET'))->cursorPaginate(50);
         return view('trainee.all', compact('data'));
+    }
+    public function searchForMembers()
+    {
+        $search = $_GET['search'];
+        $data = Trainee::where(function ($query)use($search)
+        {
+            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
+        })->cursorPaginate(50);
+        return view('trainee.search', compact('data'));
     }
     public function searchInExpired()
     {
