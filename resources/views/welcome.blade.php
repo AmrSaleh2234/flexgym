@@ -189,7 +189,7 @@
         </div>
         <div class="row">
 
-            <div class="col-lg-10 offset-lg-1">
+            <div class="col-lg-6">
                 <div class="schedule-table ">
                     <table>
                         <tbody>
@@ -240,6 +240,63 @@
                             <td class="day-time">Friday</td>
                             <td class="friday ts-item" data-tsmeta="friday">all the day </td>
                             <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">women free day </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-6 ">
+                <div class="schedule-table " style="direction: rtl">
+                    <table>
+                        <tbody>
+                        <tr >
+                            <td class=" text-color">الايام</td>
+                            <td class="monday ts-item show text-color" data-tsmeta="monday">مواعيد الرجال</td>
+                            <td class="tuesday ts-item text-color" data-tsmeta="tuesday">مواعيد السيدات  </td>
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">السبت</td>
+                            <td class="monday ts-item show" data-tsmeta="monday">الرجال من 10صباحا حتي 6 مسائا/ من 8 مسائا حتي 2 صباحا </td>
+                            <td class="tuesday ts-item" data-tsmeta="tuesday">السيدات من 6 مسائا حتي 8 مسائا  </td>
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">الاحد</td>
+                            <td class="friday ts-item" data-tsmeta="friday">طوال اليوم </td>
+                            <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">يوم راحة  </td>
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">الاثنين</td>
+                            <td class="tuesday ts-item" data-tsmeta="tuesday">الرجال من 10صباحا حتي 6 مسائا/ من 8 مسائا حتي 2 صباحا</td>
+                            <td class="monday ts-item show" data-tsmeta="monday">السيدات من 6 مسائا حتي 8 مسائا </td>
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">الثلاثاء</td>
+                            <td class="friday ts-item" data-tsmeta="friday">طوال اليوم </td>
+                            <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">يوم راحة  </td>
+
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">الاربعاء</td>
+                            <td class="tuesday ts-item" data-tsmeta="tuesday">الرجال من 10صباحا حتي 6 مسائا/ من 8 مسائا حتي 2 صباحا</td>
+                            <td class="monday ts-item show" data-tsmeta="monday">السيدات من 6 مسائا حتي 8 مسائا  </td>
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">الخميس</td>
+                            <td class="friday ts-item" data-tsmeta="friday">طوال اليوم </td>
+                            <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">يوم راحة </td>
+
+                        </tr>
+                        <tr>
+                            <td class="day-time">الجمعة</td>
+                            <td class="friday ts-item" data-tsmeta="friday">طوال اليوم</td>
+                            <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">يوم راحة </td>
 
                         </tr>
                         </tbody>

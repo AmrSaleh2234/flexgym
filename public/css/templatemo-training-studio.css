@@ -489,6 +489,10 @@ header
   .header-area .main-nav:before {
     display: none;
   }
+  .schedule-table:first-of-type
+  {
+      margin-bottom: 30px;
+  }
 }
 @media (max-width: 360px) {
     .edit_password form
