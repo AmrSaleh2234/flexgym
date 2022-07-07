@@ -405,10 +405,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; {{date("Y")}} Flex Gym
-
-                    - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110"
-                                      class="tm-text-link " target="_parent" style="font-weight: 600">Amr Saleh</a></p>
+                <p>Copyright &copy; {{date("Y")}} Flex Gym - Developed by <a rel="nofollow" href="https://www.facebook.com/profile.php?id=100004507838110" class="tm-text-link " target="_parent" style="font-weight: 600">Amr Saleh</a></p>
 
                 <!-- You shall support us a little via PayPal to info@templatemo.com -->
 
