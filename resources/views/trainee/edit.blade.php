@@ -14,7 +14,7 @@
             <form action="{{route('trainee.update',$trainee)}}" method="post"
                   class="d-flex  flex-column align-items-center p-5 add_doctor">
                 @csrf
-                <h4 class="m-auto" style="font-size: 30px ; font-weight: bold">Add <span style="color: #ed563b">trainee</span></h4>
+                <h4 class="m-auto" style="font-size: 30px ; font-weight: bold">Edit <span style="color: #ed563b">trainee</span></h4>
                 <div class="mb-4"></div>
                 <input type="text" name="name" placeholder="  Enter Name" value="{{ $trainee->name }}"
                        class="form-control @error('name') is-invalid @enderror">

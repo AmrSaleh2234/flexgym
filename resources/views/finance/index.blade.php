@@ -53,7 +53,7 @@
         </div>
 
         @if(isset($revenue2))
-            <h2 class="text-center mb-5 ">calculated between<span class="text-color"> {{$start}} - {{$end}}</span></h2>
+            <h2 class="text-center mb-5 " style="font-size: 30px ; font-weight: bold">calculated between<span class="text-color"> {{$start}} - {{$end}}</span></h2>
 
             <div class="row">
                 <div class="col-lg-6 col-sm-12">
