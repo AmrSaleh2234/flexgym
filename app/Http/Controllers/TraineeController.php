@@ -130,7 +130,7 @@ class TraineeController extends Controller
         $search = $_GET['search'];
         $data = Trainee::where(function ($query)use($search)
         {
-            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
+            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',  $search );
         })->where('end_date','>=',Carbon::today('EET'))->cursorPaginate(50);
         return view('trainee.all', compact('data'));
     }
@@ -148,7 +148,7 @@ class TraineeController extends Controller
         $search = $_GET['search'];
         $data = Trainee::where(function ($query)use($search)
         {
-            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
+            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',   $search );
         })->where('end_date','<',Carbon::today('EET'))->cursorPaginate(30);
         return view('trainee.expired', compact('data'));
     }
