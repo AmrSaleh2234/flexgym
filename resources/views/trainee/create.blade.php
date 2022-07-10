@@ -6,8 +6,8 @@
             <div class="mb-5"></div>
         @endif
 
-        @if(isset($msg))
-            <div class=" alert alert-success  w-75 m-auto">{{$msg}}</div>
+        @if(\Session::has('msg'))
+            <div class=" alert alert-success  w-75 m-auto">{!! \Session::get('msg') !!}</div>
             <div class="mb-5"></div>
         @endif
         <div class="edit_password" style="direction: rtl">
@@ -24,16 +24,16 @@
             </span>
                 @enderror
                 <label class="align-self-start mr-5" style="font-size:18px ; font-weight: 500" >ادخل <span style="color: #ed563b;font-weight: 600">معاد بدأ الاشتراك </span> </label>
-                <input type="date" name="start_date" placeholder="dd-mm-yyyy" value="{{ old('start_date') }}"
-                       class="form-control @error('start_date') is-invalid @enderror" min="1997-01-01">
+                <input type="date" name="start_date" value="{{ old('start_date') }}"
+                       class="form-control @error('start_date') is-invalid @enderror">
                 @error('start_date')
                 <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
                 <strong>{{ $message }}</strong>
             </span>
                 @enderror
                 <label class="align-self-start mr-5" style="font-size:18px ; font-weight: 500" >أدخل <span style="color: #ed563b;font-weight: 600">معاد نهاية الاشتراك</span> </label>
-                <input type="date" name="end_date" placeholder="dd-mm-yyyy" value="{{ old('end_date') }}"
-                       class="form-control @error('end_date') is-invalid @enderror" min="1997-01-01">
+                <input type="date" name="end_date" value="{{ old('end_date') }}"
+                       class="form-control @error('end_date') is-invalid @enderror">
                 @error('end_date')
                 <span class="invalid-feedback text-center" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
                 <strong>{{ $message }}</strong>

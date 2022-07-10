@@ -6,10 +6,10 @@
             <div class="mb-5"></div>
         @endif
 
-        @if(isset($msg))
-            <div class=" alert alert-success  w-75 m-auto">{{$msg}}</div>
-            <div class="mb-5"></div>
-        @endif
+            @if(\Session::has('msg'))
+                <div class=" alert alert-success  w-75 m-auto">{!! \Session::get('msg') !!}</div>
+                <div class="mb-5"></div>
+            @endif
         <div class="edit_password">
             <form action="{{route('trainer.store')}}" method="post"
                   class="d-flex  flex-column align-items-center  add_doctor"  style="padding: 0 100px">

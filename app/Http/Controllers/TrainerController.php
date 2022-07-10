@@ -44,7 +44,7 @@ class TrainerController extends Controller
             'role'=>1
 
         ]);
-        return  view('trainer.create')->with('msg',"trainer created successfully");
+        return redirect()->back()->with('msg', 'trainer created successfully');
     }
     public function allTrainers()//show all doctors for admin
     {

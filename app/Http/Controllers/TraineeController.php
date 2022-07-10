@@ -79,7 +79,8 @@ class TraineeController extends Controller
             'program' => $request->program,
         ]);
 
-        return view('trainee.create')->with('msg', "trainee created successfully");
+        return redirect()->back()->with('msg', 'trainee created successfully');
+
     }
     public function allTrainees()//show all doctors for admin
     {
