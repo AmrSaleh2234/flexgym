@@ -15,10 +15,10 @@
         <form id="filter" action="{{route('trainee.filter.expired')}}" method="post">
             @csrf
             <div class="form-check ">
-                <label class="form-check-label text-color" for="flexCheckDefault" style=" font-weight: bold ;font-size: 25px;margin-left: 15px">
+                <label class="form-check-label text-color" for="flexCheckDefault" style=" font-weight: bold ;font-size: 25px;margin-left: 15px;cursor: pointer">
                     الأشخاص لم تدفع بعد
                 </label>
-                <input class="form-check-input border-red-500/50" type="checkbox" @if(\Illuminate\Support\Facades\Route::is('trainee.filter.expired')) checked @endif id="flexCheckDefault" style="width: 30px;height: 30px" onclick="submitFE()">
+                <input class="form-check-input border-red-500/50 cursor-pointer" type="checkbox" @if(\Illuminate\Support\Facades\Route::is('trainee.filter.expired')) checked @endif id="flexCheckDefault" style="width: 30px;height: 30px" onclick="submitFE()">
 
             </div>
         </form>
