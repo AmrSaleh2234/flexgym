@@ -88,6 +88,12 @@ class TraineeController extends Controller
 
         return view('trainee.all',compact('data'));
     }
+    public function allTraineesFilter()//show all doctors for admin
+    {
+        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->where('not_payed','>','0')->orderBy('id','ASC')->cursorPaginate(50);
+
+        return view('trainee.all',compact('data'));
+    }
     public function expiredTrainees()//show all doctors for admin
     {
         $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(50);

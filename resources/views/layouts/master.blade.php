@@ -125,6 +125,21 @@
     function submitSearchTraineeForm() {
         formSearchTrainee.submit();
     }
+    function  submitF()
+    {
+        var checkBox = document.getElementById("flexCheckDefault");
+        var form = document.getElementById("filter");
+
+
+
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true){
+
+            form.submit();
+        } else {
+            window.location ="{{route('trainee.all')}}"
+        }
+    }
 </script>
 
 </body>
