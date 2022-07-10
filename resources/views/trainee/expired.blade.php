@@ -38,7 +38,11 @@
                     <td>{{$item->start_date}}</td>
                     <td>{{$item->end_date}}</td>
                     <td>{{$item->payed}}</td>
-                    <td>{{$item->not_payed}}</td>
+                    @if($item->not_payed !=0)
+                        <td class="text-danger ">{{$item->not_payed}}</td>
+                    @else
+                        <td>{{$item->not_payed}}</td>
+                    @endif
                     <td>
                         @if($item->program==0)
                             جيم
