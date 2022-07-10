@@ -36,6 +36,7 @@ Route::get('trainee/create',[\App\Http\Controllers\TraineeController::class,'cre
 Route::post('trainee/store',[\App\Http\Controllers\TraineeController::class,'store'])->name('trainee.store');
 Route::get('trainee/all',[\App\Http\Controllers\TraineeController::class,'allTrainees'])->name('trainee.all');
 Route::post('trainee/filtered',[\App\Http\Controllers\TraineeController::class,'allTraineesFilter'])->name('trainee.filter');
+Route::post('trainee/filtered/expired',[\App\Http\Controllers\TraineeController::class,'allTraineesFilterExpired'])->name('trainee.filter.expired');
 Route::get('trainee/expired',[\App\Http\Controllers\TraineeController::class,'expiredTrainees'])->name('trainee.expired');
 Route::get('trainee/edit/{trainee}',[\App\Http\Controllers\TraineeController::class,'edit'])->name('trainee.edit');
 Route::post('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');

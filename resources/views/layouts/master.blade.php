@@ -140,6 +140,21 @@
             window.location ="{{route('trainee.all')}}"
         }
     }
+    function  submitFE()
+    {
+        var checkBox = document.getElementById("flexCheckDefault");
+        var form = document.getElementById("filter");
+
+
+
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true){
+
+            form.submit();
+        } else {
+            window.location ="{{route('trainee.expired')}}"
+        }
+    }
 </script>
 
 </body>
