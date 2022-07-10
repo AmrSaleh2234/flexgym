@@ -139,7 +139,7 @@ class TraineeController extends Controller
         $search = $_GET['search'];
         $data = Trainee::where(function ($query)use($search)
         {
-            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE', '%' . $search . '%');
+            $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',$search);
         })->cursorPaginate(50);
         return view('trainee.search', compact('data'));
     }
