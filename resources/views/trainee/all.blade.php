@@ -37,7 +37,11 @@
                     <td>{{$item->name}}</td>
                     <td>{{$item->start_date}}</td>
                     <td>{{$item->end_date}}</td>
-                    <td>{{$item->payed}}</td>
+                    @if($item->payed !=0)
+                        <td class="text-success ">{{$item->payed}}</td>
+                    @else
+                        <td>{{$item->payed}}</td>
+                    @endif
                     @if($item->not_payed !=0)
                         <td class="text-danger ">{{$item->not_payed}}</td>
                     @else
