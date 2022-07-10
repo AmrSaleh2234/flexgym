@@ -3,30 +3,103 @@
 
     <div class="container  text-right" style="direction: rtl">
 
-        <h2 class="text-center mb-3 " style="font-size: 30px ; font-weight: bold">snapshot <span class="text-color">accounting table</span></h2>
+        <h2 class="text-center mb-3 " style="font-size: 30px ; font-weight: bold;margin-bottom: 50px !important;">snapshot <span class="text-color">accounting table</span>
+        </h2>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="d-flex mb-4 mt-4">
+                    <h3 class="text-color "> المبلغ المحصل : </h3>
+                    &nbsp;
+                    <h3 class="r ">{{ $revenue}}</h3>
+                </div>
+                <div class="d-flex mb-5">
+                    <h3 class="text-color "> المبلغ المتبقي : </h3>
+                    &nbsp;
+                    <h3 class=" ">{{$deserved_amount}}</h3>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 d-flex flex-column justify-content-center">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="d-flex mb-4">
+                            <h3 class="text-color "> جيم : </h3>
+                            &nbsp;
+                            <h3 class="r ">{{ $fitness}}</h3>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <h3 class="text-color "> جيم و تخسيس : </h3>
+                            &nbsp;
+                            <h3 class="r ">{{ $fitnessAndBurn}}</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="d-flex mb-4">
+                            <h3 class="text-color "> تخسيس : </h3>
+                            &nbsp;
+                            <h3 class="r ">{{ $burn}}</h3>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <h3 class="text-color "> سيدات : </h3>
+                            &nbsp;
+                            <h3 class="r ">{{ $women}}</h3>
+                        </div>
 
-        <div class="d-flex mb-4">
-            <h3 class="text-color "> المبلغ المحصل : </h3>
-            &nbsp;
-            <h3 class="r ">{{ $revenue}}</h3>
+                    </div>
+                </div>
+
+
+
+            </div>
         </div>
-        <div class="d-flex mb-5">
-            <h3 class="text-color "> المبلغ المتبقي : </h3>
-            &nbsp;
-            <h3 class=" ">{{$deserved_amount}}</h3>
-        </div>
+
         @if(isset($revenue2))
             <h2 class="text-center mb-5 ">calculated between<span class="text-color"> {{$start}} - {{$end}}</span></h2>
 
-            <div class="d-flex mb-4">
-                <h3 class="text-color "> المبلغ المحصل : </h3>
-                &nbsp;
-                <h3 class="r ">{{ $revenue2}}</h3>
-            </div>
-            <div class="d-flex">
-                <h3 class="text-color "> المبلغ المتبقي : </h3>
-                &nbsp;
-                <h3 class=" ">{{$deserved_amount2}}</h3>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="d-flex mb-4 mt-4">
+                        <h3 class="text-color "> المبلغ المحصل : </h3>
+                        &nbsp;
+                        <h3 class="r ">{{ $revenue2}}</h3>
+                    </div>
+                    <div class="d-flex mb-5">
+                        <h3 class="text-color "> المبلغ المتبقي : </h3>
+                        &nbsp;
+                        <h3 class=" ">{{$deserved_amount2}}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="d-flex mb-4">
+                                <h3 class="text-color "> جيم : </h3>
+                                &nbsp;
+                                <h3 class="r ">{{ $fitness2}}</h3>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <h3 class="text-color "> جيم و تخسيس : </h3>
+                                &nbsp;
+                                <h3 class="r ">{{ $fitnessAndBurn2}}</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="d-flex mb-4">
+                                <h3 class="text-color "> تخسيس : </h3>
+                                &nbsp;
+                                <h3 class="r ">{{ $burn2}}</h3>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <h3 class="text-color "> سيدات : </h3>
+                                &nbsp;
+                                <h3 class="r ">{{ $women2}}</h3>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
             </div>
         @else
             <div class="edit_password mt-4" style="direction: rtl">
