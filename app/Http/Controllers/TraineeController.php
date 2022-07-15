@@ -80,7 +80,8 @@ class TraineeController extends Controller
             'updater' => auth()->user()->name ,
         ]);
 
-        return redirect()->back()->with('msg', 'trainee created successfully');
+
+       return redirect()->back()->with('msg', 'trainee created successfully');
 
     }
     public function allTrainees()//show all doctors for admin
