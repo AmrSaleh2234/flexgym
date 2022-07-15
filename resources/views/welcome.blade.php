@@ -353,8 +353,8 @@
                     </div>
                     <div class="down-content">
 
-                        <span style="font-weight: bold">captain: Ramy </span>
-                        <p>Captain Ramy is trainer fitness and cardio, He is assistant in flex gym .</p>
+                        <span style="font-weight: bold">captain: Maro </span>
+                        <p>Captain Maro is trainer fitness and cardio, He is assistant in flex gym .</p>
 
                     </div>
                 </div>
@@ -366,8 +366,8 @@
                     </div>
                     <div class="down-content">
 
-                        <span style="font-weight: bold">captain: Ramy </span>
-                        <p>Captain Ramy is trainer fitness and cardio, He is assistant in flex gym .</p>
+                        <span style="font-weight: bold">captain: Mosa </span>
+                        <p>Captain Mosa is trainer fitness and cardio, He is assistant in flex gym .</p>
 
                     </div>
                 </div>
