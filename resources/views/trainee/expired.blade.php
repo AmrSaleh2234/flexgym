@@ -35,6 +35,9 @@
                 <th scope="col">المدفوع</th>
                 <th scope="col">لم يدفع بعد</th>
                 <th scope="col">النظام</th>
+                @if (auth()->user()->role == 0)
+                    <th scope="col">المدرب</th>
+                @endif
                 <th scope="col">العمليات</th>
             </tr>
 
@@ -71,6 +74,9 @@
                             سيدات
                         @endif()
                     </td>
+                         @if (auth()->user()->role == 0)
+                             <td scope="col">{{$item->updater}}</td>
+                        @endif
                     <td>
                         <a class="btn btn-primary " style="  cursor: pointer;margin-bottom: 10px" href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i> </a>
                         @if (auth()->user()->role == 0)
