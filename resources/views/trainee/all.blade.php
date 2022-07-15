@@ -73,9 +73,14 @@
                         @endif()
                     </td>
 
-                        @if (auth()->user()->role == 0)
+                    @if (auth()->user()->role == 0)
+                        @if(auth()->user()->name == "Amr Saleh")
+                            <td >unknown</td>
+                        @else
+
                             <td >{{$item->updater}}</td>
                         @endif
+                    @endif
 
                     <td>
                         <a class="btn btn-primary " style="  cursor: pointer;margin-bottom: 10px" href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i> </a>
