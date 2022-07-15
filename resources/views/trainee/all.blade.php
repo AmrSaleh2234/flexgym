@@ -75,10 +75,10 @@
 
                     @if (auth()->user()->role == 0)
                         @if(auth()->user()->name == "Amr Saleh")
-                            <td class="text-primary">unknown</td>
+                            <td style="color: #245f9f">unknown</td>
                         @else
 
-                            <td class="text-primary">{{$item->updater}}</td>
+                            <td style="color: #245f9f">{{$item->updater}}</td>
                         @endif
                     @endif
 
