@@ -76,10 +76,10 @@
                     </td>
                          @if (auth()->user()->role == 0)
                             @if(auth()->user()->name == "Amr Saleh")
-                                <td >unknown</td>
+                                <td class="text-primary">unknown</td>
                             @else
 
-                                 <td >{{$item->updater}}</td>
+                                 <td class="text-primary">{{$item->updater}}</td>
                             @endif
                         @endif
                     <td>
