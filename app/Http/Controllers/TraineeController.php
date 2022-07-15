@@ -77,6 +77,7 @@ class TraineeController extends Controller
             'payed' => $request->payed,
             'not_payed' => $request->not_payed,
             'program' => $request->program,
+            'updater' => auth()->user()->name ,
         ]);
 
         return redirect()->back()->with('msg', 'trainee created successfully');
@@ -133,6 +134,7 @@ class TraineeController extends Controller
             'payed' => $request->payed,
             'not_payed' => $request->not_payed,
             'program' => $request->program,
+            'updater' => auth()->user()->name ,
         ]);
         return redirect()->back()->with('msg','updated successfully ');
     }
