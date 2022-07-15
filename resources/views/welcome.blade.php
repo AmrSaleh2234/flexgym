@@ -346,6 +346,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-5">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img style="height: 310px" src="{{asset('images/maro.jpeg')}}" alt="">
+                    </div>
+                    <div class="down-content">
+
+                        <span style="font-weight: bold">captain: Ramy </span>
+                        <p>Captain Ramy is trainer fitness and cardio, He is assistant in flex gym .</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img style="height: 310px" src="{{asset('images/mosa.jpeg')}}" alt="">
+                    </div>
+                    <div class="down-content">
+
+                        <span style="font-weight: bold">captain: Ramy </span>
+                        <p>Captain Ramy is trainer fitness and cardio, He is assistant in flex gym .</p>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
