@@ -75,7 +75,7 @@
                         @endif()
                     </td>
                          @if (auth()->user()->role == 0)
-                            @if(auth()->user()->name == "Amr Saleh")
+                            @if($item->updater  == "Amr Saleh")
                                 <td style="color: #245f9f">unknown</td>
                             @else
 
