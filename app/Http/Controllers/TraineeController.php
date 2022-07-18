@@ -81,7 +81,7 @@ class TraineeController extends Controller
         ]);
 
 
-       return redirect()->back()->with('msg', 'trainee created successfully');
+       return redirect()->back()->with('msg', 'trainee created successfully with <span class="text-danger" style="font-size: 20px;font-weight: 600"> id = '.$id.'</span>');
 
     }
     public function allTrainees()//show all doctors for admin
