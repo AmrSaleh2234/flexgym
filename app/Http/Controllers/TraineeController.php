@@ -44,26 +44,41 @@ class TraineeController extends Controller
 
         $trainee = Trainee::orderBy('id','ASC')->get();
         $trainneCount = count($trainee);
-
-        if ($trainneCount == 0) {
-            $id=1;
-        } elseif ($trainneCount == 1) {
-         $id=2;
-        }
-        elseif ($trainee[0]['id']!=1)
+        if ($request->program == 3)
         {
-         $id=1;
-        }
-        else {
+            if ($trainneCount == 0)
+            {
+                $id =4000;
+            }
+            elseif($trainee[$trainneCount-1]['id']<4000)
+            {
+                $id =4000;
 
-            for ($i = 0; $i < $trainneCount - 1; $i++) {
+            }
+        }else{
+            if ($trainneCount == 0) {
+                $id=1;
+            }
+            elseif ($trainee[0]['id']!=1)
+            {
+                $id=1;
+            }
+            elseif ($trainneCount == 1) {
+                $id=2;
+            }
 
-                if($trainee[$i+1]['id']-$trainee[$i]['id'] !=1)
-                {
-                    $id=$trainee[$i]['id']+1;
-                    break;
+            else {
+
+                for ($i = 0; $i < $trainneCount - 1; $i++) {
+
+                    if($trainee[$i+1]['id']-$trainee[$i]['id'] !=1)
+                    {
+                        $id=$trainee[$i]['id']+1;
+                        break;
+                    }
                 }
             }
+
         }
         if ($id==0)
         {
