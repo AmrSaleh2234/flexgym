@@ -108,7 +108,7 @@ class TraineeController extends Controller
     }
     public function allTraineesPDF()//show all doctors for admin
     {
-        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(50);
+        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->get();
         $pdf=Pdf::loadView('trainee.all-download',compact('data'))->setOptions(['defaultFont' => 'sans-serif']);
        return $pdf->stream("trainee.pdf");
     }
