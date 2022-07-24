@@ -161,7 +161,7 @@ class TraineeController extends Controller
         $data = Trainee::where(function ($query)use($search)
         {
             $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',  $search );
-        })->where('end_date','>=',Carbon::today('EET'))->cursorPaginate(50);
+        })->cursorPaginate(50);
         return view('trainee.all', compact('data'));
     }
     public function searchForMembers()
@@ -179,7 +179,7 @@ class TraineeController extends Controller
         $data = Trainee::where(function ($query)use($search)
         {
             $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',   $search );
-        })->where('end_date','<',Carbon::today('EET'))->cursorPaginate(30);
+        })->cursorPaginate(30);
         return view('trainee.expired', compact('data'));
     }
     public function destroy(Trainee $trainee)//delete doctor by admin
