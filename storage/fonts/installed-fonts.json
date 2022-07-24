@@ -1,0 +1,22 @@
+{
+    "poppins": {
+        "100_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_100_italic_15535629c28e03e092f8b913f495d2a9",
+        "200_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_200_italic_a4f236f2eb4a72d6750c204ea6bf8ef9",
+        "300_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_300_italic_56b93a487d8c28777146ffd1eef895fd",
+        "italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_italic_46da975c18aa560b0bd3b88b138916e9",
+        "500_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_500_italic_c293cb67db049e112d06248502d9b24c",
+        "600_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_600_italic_5bc21aa56d8039e2f3d1b8f790f9558d",
+        "bold_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_bold_italic_1918f692c841b01acf827608eecc4cdd",
+        "800_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_800_italic_67f2c8f398c66be3f725a3b996fc052b",
+        "900_italic": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_900_italic_8e75390cc145475aa5d46c66a48aaff4",
+        "100": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_100_068bd9b25394b5841c43e43604f4abf6",
+        "200": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_200_6ad855cb213b5e84660a5640d8f48bbd",
+        "300": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_300_999a4088f0da952988730996a4bec1d8",
+        "normal": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_normal_ee697d7869cb745ccf3ccccc013145ad",
+        "500": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_500_fce53b208cddccda1573b7620b579598",
+        "600": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_600_9623fbc18c38938c2057a9aae8390a42",
+        "bold": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_bold_8fe618268f56b4b8f1e70e87a9e99fc0",
+        "800": "C:\\xampp\\htdocs\\gym-flex\\storage\\fonts\/poppins_800_ef86a7722c08a791e114b6649bbd6ae4",
+        "900": "poppins_900_c60a07be40ef8f258a248a492dd87245"
+    }
+}

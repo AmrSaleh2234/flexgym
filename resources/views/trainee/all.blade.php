@@ -1,5 +1,6 @@
 @extends('layouts.master',['allTrainees'=>''])
 @section('content')
+
     <div class="container mb-4 pl-5 pr-5">
         <form class="input-group rounded search_input  " id="formSearchTrainee"
               action="{{route('trainee.search')}}" type="get">
@@ -23,6 +24,7 @@
 
             </div>
         </form>
+        <a class="btn btn-primary" href="{{route('trainee.all.download')}}" style="margin-right: 80px;cursor:pointer;"><i class="fa-solid fa-download"></i></a>
     </div>
     <div class="container table-responsive">
         <table class="table" style="direction: rtl">

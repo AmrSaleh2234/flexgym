@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TraineeController extends Controller
 {
@@ -105,6 +106,13 @@ class TraineeController extends Controller
 
         return view('trainee.all',compact('data'));
     }
+    public function allTraineesPDF()//show all doctors for admin
+    {
+        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC');
+        $pdf=Pdf::loadView('trainee.all-download',['data'=>$data])->setOptions(['defaultFont' => 'sans-serif']);
+       return $pdf->stream("trainee.pdf");
+    }
+
     public function allTraineesFilter()//show all doctors for admin
     {
         $data = Trainee::where('end_date','>=',Carbon::today('EET'))->where('not_payed','>','0')->orderBy('id','ASC')->cursorPaginate(50);
