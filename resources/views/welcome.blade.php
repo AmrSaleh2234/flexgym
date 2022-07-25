@@ -86,7 +86,7 @@
         <div class="caption d-flex flex-column align-items-center">
 
                 <form class="input-group rounded search_input  d-flex justify-content-center" id="formSearchTrainee"
-                      action="{{route('trainee.searchMembers')}}" type="get" style="margin-right: 10px;width: 55%;">
+                      action="{{route('trainee.searchMembers')}}" type="get" style="margin-right: 10px;width: 40%;">
 
                     <input type="search" class="form-control rounded" name="search" placeholder="Search by id or name " aria-label="Search"
                            aria-describedby="search-addon" id="search_course" style="background-color: #ffffff !important;margin-right: 10px;"/>
