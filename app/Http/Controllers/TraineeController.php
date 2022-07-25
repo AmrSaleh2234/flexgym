@@ -118,7 +118,7 @@ class TraineeController extends Controller
         $data = Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->get();
 
         $pdf = LaravelMpdf::loadView('trainee.expired-download', compact('data'));
-        return $pdf->stream('trainee.pdf');
+        return $pdf->stream('trainee-expired.pdf');
     }
 
     public function allTraineesFilter()//show all doctors for admin
