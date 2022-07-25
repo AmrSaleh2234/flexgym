@@ -50,18 +50,6 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section mr-4">
-                            <form class="input-group rounded search_input  " id="formSearchTrainee"
-                                  action="{{route('trainee.searchMembers')}}" type="get" style="margin-right: 10px">
-
-                                <input type="search" class="form-control rounded" name="search" placeholder="Search by id or name " aria-label="Search"
-                                       aria-describedby="search-addon" id="search_course" style="background-color: #ffffff !important;margin-right: 10px"/>
-                                <label class="input-group-text border-0 pointer-event" id="search-addon" for="search_course"
-                                       onclick="document.getElementById('formSearchTrainee').submit()" style="cursor: pointer;background-color: #f4f4f4!important;">
-                                    <i class="fas fa-search text-color"></i>
-                                </label>
-                            </form>
-                        </li>
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="#features">About</a></li>
                         <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
@@ -95,8 +83,19 @@
     </video>
 
     <div class="video-overlay header-text">
-        <div class="caption">
-            <h6>work harder, get stronger</h6>
+        <div class="caption d-flex flex-column align-items-center">
+
+                <form class="input-group rounded search_input  d-flex justify-content-center" id="formSearchTrainee"
+                      action="{{route('trainee.searchMembers')}}" type="get" style="margin-right: 10px;width: 55%;">
+
+                    <input type="search" class="form-control rounded" name="search" placeholder="Search by id or name " aria-label="Search"
+                           aria-describedby="search-addon" id="search_course" style="background-color: #ffffff !important;margin-right: 10px;"/>
+                    <label class="input-group-text border-0 pointer-event" id="search-addon" for="search_course"
+                           onclick="document.getElementById('formSearchTrainee').submit()" style="cursor: pointer;background-color: #f4f4f4!important;">
+                        <i class="fas fa-search text-color"></i>
+                    </label>
+                </form>
+
             <h2>easy with our <em>gym</em></h2>
             <div class="main-button scroll-to-section">
                 <a href="#features">Become a member</a>

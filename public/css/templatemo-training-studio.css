@@ -508,7 +508,10 @@ header
   .header-area .main-nav .logo {
     color: #1e1e1e;
   }
-
+    .caption form
+    {
+        width: 91% !important;
+    }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
     color: #ed563b!important;
@@ -621,6 +624,7 @@ header
   .header-area .main-nav .nav {
     display: flex !important;
   }
+
 }
 
 
