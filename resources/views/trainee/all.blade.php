@@ -14,19 +14,22 @@
         </form>
     </div>
     <div class="container mb-4 pl-5 pr-5 d-flex justify-start" style="direction: rtl">
-        <form id="filter" action="{{route('trainee.filter')}}" method="post">
+        <form id="filter" action="{{route('trainee.filter.expired')}}" method="post" class="col-lg-6 col-sm-9 d-flex flex-wrap justify-content-right" >
             @csrf
             <div class="form-check ">
                 <label class="form-check-label text-color" for="flexCheckDefault" style=" font-weight: bold ;font-size: 25px;margin-left: 15px;cursor: pointer">
-                   الأشخاص لم تدفع بعد
+                    الأشخاص لم تدفع بعد
                 </label>
-                <input class="form-check-input border-red-500/50 cursor-pointer" type="checkbox" @if(\Illuminate\Support\Facades\Route::is('trainee.filter')) checked @endif id="flexCheckDefault" style="width: 30px;height: 30px" onclick="submitF()">
+                <input class="form-check-input border-red-500/50 cursor-pointer" type="checkbox" @if(\Illuminate\Support\Facades\Route::is('trainee.filter.expired')) checked @endif id="flexCheckDefault" style="width: 30px;height: 30px" onclick="submitFE()">
 
             </div>
         </form>
-        <a class="btn btn-primary" href="{{route('trainee.all.download')}}" style="margin-right: 80px;cursor:pointer;"><i class="fa-solid fa-download"></i></a>
-    </div>
-    <div class="container table-responsive">
+        <div class="col-lg-6  col-sm-3 d-flex flex-wrap justify-content-right align-items-center">
+            <h4 class="text-color">Backup </h4>
+            <a class="btn btn-primary " href="{{route('trainee.all.download')}}" style="margin-right: 30px;cursor:pointer;"><i class="fa-solid fa-download "></i></a>
+
+        </div>
+    </div>    <div class="container table-responsive">
         <table class="table" style="direction: rtl">
             <thead>
             <tr>

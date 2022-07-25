@@ -39,6 +39,7 @@ Route::get('trainee/all/download',[\App\Http\Controllers\TraineeController::clas
 Route::post('trainee/filtered',[\App\Http\Controllers\TraineeController::class,'allTraineesFilter'])->name('trainee.filter');
 Route::post('trainee/filtered/expired',[\App\Http\Controllers\TraineeController::class,'allTraineesFilterExpired'])->name('trainee.filter.expired');
 Route::get('trainee/expired',[\App\Http\Controllers\TraineeController::class,'expiredTrainees'])->name('trainee.expired');
+Route::get('trainee/expired/download',[\App\Http\Controllers\TraineeController::class,'expiredTraineesPDF'])->name('trainee.expired.download');
 Route::get('trainee/edit/{trainee}',[\App\Http\Controllers\TraineeController::class,'edit'])->name('trainee.edit');
 Route::post('trainee/update/{trainee}',[\App\Http\Controllers\TraineeController::class,'update'])->name('trainee.update');
 Route::get('trainee/search',[\App\Http\Controllers\TraineeController::class,'search'])->name('trainee.search');

@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Barryvdh\DomPDF\Facade\Pdf;
+use Meneses\LaravelMpdf\Facades\LaravelMpdf;
 
 class TraineeController extends Controller
 {
@@ -109,8 +109,16 @@ class TraineeController extends Controller
     public function allTraineesPDF()//show all doctors for admin
     {
         $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->get();
-        $pdf=Pdf::loadView('trainee.all-download',compact('data'))->setOptions(['defaultFont' => 'sans-serif']);
-       return $pdf->stream("trainee.pdf");
+
+        $pdf = LaravelMpdf::loadView('trainee.all-download', compact('data'));
+        return $pdf->stream('trainee.pdf');
+    }
+    public function expiredTraineesPDF()//show all doctors for admin
+    {
+        $data = Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->get();
+
+        $pdf = LaravelMpdf::loadView('trainee.expired-download', compact('data'));
+        return $pdf->stream('trainee.pdf');
     }
 
     public function allTraineesFilter()//show all doctors for admin
