@@ -42,8 +42,6 @@ class FinanceController extends Controller
     {
         list($revenue,$deserved_amount,$fitness,$burn,$fitnessAndBurn,$women)=$this->finance();
         $data = Trainee::whereBetween('start_date',[$request->start_date,$request->end_date])
-            ->orWhereBetween('end_date',[$request->start_date,$request->end_date])
-            ->orWhereBetween('end_date',[$request->end_date,$request->start_date])
             ->orWhereBetween('start_date',[$request->end_date,$request->start_date])
             ->get();
         $revenue2=0;
