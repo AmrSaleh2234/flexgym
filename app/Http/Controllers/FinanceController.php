@@ -40,10 +40,14 @@ class FinanceController extends Controller
 
     public function financeDate(Request $request)
     {
+
         list($revenue,$deserved_amount,$fitness,$burn,$fitnessAndBurn,$women)=$this->finance();
-        $data = Trainee::whereBetween('start_date',[$request->start_date,$request->end_date])
-            ->orWhereBetween('start_date',[$request->end_date,$request->start_date])
+        $data = Trainee::whereBetween('created_at',[$request->start_date,$request->end_date])
+            ->orWhereBetween('created_at',[$request->end_date,$request->start_date])
+            ->orWhereBetween('updated_at',[$request->start_date,$request->end_date])
+            ->orWhereBetween('updated_at',[$request->end_date,$request->start_date])
             ->get();
+
         $revenue2=0;
         $deserved_amount2 =0;
         $fitness2 =0;
