@@ -101,12 +101,8 @@
 
     </div>
     <div class="container d-flex justify-content-center">
-        {!! $data->links() !!}
+        {{ $data->links("pagination::bootstrap-4") }}
     </div>
-    <style>
-        .w-5{
-            display: none;
-        }
-    </style>
+
 
 @stop
