@@ -102,7 +102,7 @@ class TraineeController extends Controller
     }
     public function allTrainees()//show all doctors for admin
     {
-        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(50);
+        $data = Trainee::where('end_date','>=',Carbon::today('EET'))->orderBy('id','ASC')->paginate(50);
 
         return view('trainee.all',compact('data'));
     }
@@ -135,7 +135,7 @@ class TraineeController extends Controller
     }
     public function expiredTrainees()//show all doctors for admin
     {
-        $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->cursorPaginate(50);
+        $data =Trainee::where('end_date','<',Carbon::today('EET'))->orderBy('id','ASC')->paginate(50);
 
         return view('trainee.expired',compact('data'));
     }
