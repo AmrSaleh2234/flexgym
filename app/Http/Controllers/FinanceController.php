@@ -42,14 +42,12 @@ class FinanceController extends Controller
     {
 
         list($revenue,$deserved_amount,$fitness,$burn,$fitnessAndBurn,$women)=$this->finance();
-        $data = Trainee::where(function ($query) use ($request)
-        {
-            $query->whereBetween('created_at',[$request->start_date,$request->end_date])
+        $data =
+            Trainee::whereBetween('created_at',[$request->start_date,$request->end_date])
                 ->orWhereBetween('created_at',[$request->end_date,$request->start_date])
                 ->orWhereBetween('updated_at',[$request->start_date,$request->end_date])
                 ->orWhereBetween('updated_at',[$request->end_date,$request->start_date]);
-        })->whereBetween('start_date',[$request->start_date,$request->end_date])
-            ->orWhereBetween('start_date',[$request->end_date,$request->start_date])->get();
+
 
             return $data;
 //        $revenue2=0;
