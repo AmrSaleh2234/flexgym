@@ -100,7 +100,7 @@
         </table>
     </div>
     <div class="container d-flex justify-content-center">
-        {{ $data->links() }}
+        {{ $data->links("pagination::bootstrap-4") }}
     </div>
 
 @stop
