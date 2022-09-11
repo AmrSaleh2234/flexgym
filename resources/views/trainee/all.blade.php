@@ -101,7 +101,7 @@
 
     </div>
     <div class="container d-flex justify-content-center">
-        {{ $data->links() }}
+        {!! $data->links() !!}
     </div>
 
 @stop
