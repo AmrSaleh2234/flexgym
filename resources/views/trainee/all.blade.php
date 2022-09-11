@@ -103,5 +103,10 @@
     <div class="container d-flex justify-content-center">
         {!! $data->links() !!}
     </div>
+    <style>
+        .w-5{
+            display: none;
+        }
+    </style>
 
 @stop
