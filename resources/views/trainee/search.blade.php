@@ -120,9 +120,6 @@
     </table>
 </div>
 
-<div class="container d-flex justify-content-center">
-    {{ $data->links("pagination::bootstrap-4")  }}
-</div>
 
 
 <footer>

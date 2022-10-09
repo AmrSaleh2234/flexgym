@@ -177,8 +177,8 @@ class TraineeController extends Controller
         $data = Trainee::where(function ($query)use($search)
         {
             $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',  $search );
-        })->paginate(50)->setPath('');
-        return view('trainee.all')->withDetails ( $data )->withQuery ( $search );
+        });
+        return view('trainee.all', compact('data'));
     }
     public function searchForMembers()
     {
@@ -186,7 +186,7 @@ class TraineeController extends Controller
         $data = Trainee::where(function ($query)use($search)
         {
             $query->where('name', 'LIKE', '%' . $search . '%')->orWhere('id','LIKE',$search);
-        })->paginate(50);
+        });
         return view('trainee.search', compact('data'));
     }
     public function searchInExpired()
