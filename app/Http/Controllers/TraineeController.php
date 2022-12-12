@@ -102,6 +102,7 @@ class TraineeController extends Controller
             'end_date'=>$request->end_date,
             'program'=>$request->program,
         ]);
+        revenue::create(['trainee_id'=>$trainee->id ,'trainer_id'=>auth()->user()->id , 'amount'=>$request->payed]);
 
 
        return redirect()->back()->with('msg', 'trainee created successfully with <span class="text-danger" style="font-size: 20px;font-weight: 600"> id = '.$id.'</span>');
@@ -216,7 +217,16 @@ class TraineeController extends Controller
     }
     public function destroy(Trainee $trainee)//delete doctor by admin
     {
+        foreach ($trainee->subscription as $item)
+        {
+            $item->update(['deleted'=>'1']);
+        }
+        foreach ($trainee->payements as $item)
+        {
+            $item->update(['deleted'=>'1']);
+        }
         $trainee->delete();
+
         return redirect()->back();
     }
 
