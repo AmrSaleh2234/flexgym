@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\revenue;
+use App\Models\subscription;
 use App\Models\Trainee;
 use App\Models\User;
 use Carbon\Carbon;
@@ -32,7 +34,7 @@ class TraineeController extends Controller
     {
         $id = 0;
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
+            'name' => 'required|unique:trainees',
             'start_date' => 'required',
             'end_date' => 'required',
             'payed' => 'required|integer|min:0|max:2000',
@@ -94,6 +96,11 @@ class TraineeController extends Controller
             'not_payed' => $request->not_payed,
             'program' => $request->program,
             'updater' => auth()->user()->name ,
+        ]);
+        subscription::create(['trainee_id'=>$id,'trainer_id'=>auth()->user()->id,
+            'start_date'=>$request->start_date,
+            'end_date'=>$request->end_date,
+            'program'=>$request->program,
         ]);
 
 
@@ -158,6 +165,15 @@ class TraineeController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
+        if($trainee->end_date < Carbon::today('EET') && $request->end_date > Carbon::today('EET'))
+        {
+            revenue::create(['trainee_id'=>$trainee->id ,'trainer_id'=>auth()->user()->id , 'amount'=>$request->payed]);
+            subscription::create(['trainee_id'=>$trainee->id,'trainer_id'=>auth()->user()->id,
+                'start_date'=>$request->start_date,
+                'end_date'=>$request->end_date,
+                'program'=>$request->program,
+            ]);
+        }
         $trainee->update([
 
             'name' => $request->name,
@@ -202,5 +218,24 @@ class TraineeController extends Controller
     {
         $trainee->delete();
         return redirect()->back();
+    }
+
+    public function pay(Request $request)
+    {
+        $trainee= Trainee::find($request->id);
+        if($trainee->not_payed < $request->payed)
+        {
+            return redirect()->back()->with('error','المبلغ المدفوع اكبر من المستحق');
+
+        }
+        revenue::create(['trainee_id'=>$request->id,'trainer_id'=>auth()->user()->id,'amount'=>$request->payed]);
+        $trainee->update(['payed'=>$trainee->payed+$request->payed, 'not_payed'=>$trainee->not_payed-$request->payed]);
+        return redirect()->back()->with('msg','تم تحصيل النقديه بنجاح');
+    }
+
+    public function info(Trainee $trainee)
+    {
+       $data=$trainee->subscription()->orderBy('id','desc')->get();
+       return view('trainee.info',compact('data'));
     }
 }

@@ -33,6 +33,8 @@ Route::get('trainer/delete/{user}',[\App\Http\Controllers\TrainerController::cla
 
 #############################################333## start trainee #####################################################################
 Route::get('trainee/create',[\App\Http\Controllers\TraineeController::class,'create'])->name('trainee.create');
+Route::get('trainee/info/{trainee}',[\App\Http\Controllers\TraineeController::class,'info'])->name('trainee.info');
+Route::get('trainee/pay',[\App\Http\Controllers\TraineeController::class,'pay'])->name('trainee.pay');
 Route::post('trainee/store',[\App\Http\Controllers\TraineeController::class,'store'])->name('trainee.store');
 Route::get('trainee/all',[\App\Http\Controllers\TraineeController::class,'allTrainees'])->name('trainee.all');
 Route::get('trainee/all/download',[\App\Http\Controllers\TraineeController::class,'allTraineesPDF'])->name('trainee.all.download');
@@ -49,6 +51,7 @@ Route::get('trainee/delete/{trainee}',[\App\Http\Controllers\TraineeController::
 ################################################## end trainee ######################################################################
 ######################################################## start finance ################################################################
 Route::get('finance/index',[\App\Http\Controllers\FinanceController::class,'index'])->name('finance.index');
+Route::get('finance/day',[\App\Http\Controllers\FinanceController::class,'day'])->name('finance.day');
 Route::post('finance/Date',[\App\Http\Controllers\FinanceController::class,'financeDate'])->name('finance.date');
 ############################################################ end finance ##############################################################
 ##################################################### Auth ###########################################################################

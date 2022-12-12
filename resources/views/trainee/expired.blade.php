@@ -1,5 +1,17 @@
 @extends('layouts.master',['expiredTrainees'=>''])
 @section('content')
+    <div class="container ">
+
+
+        @if(\Session::has('error'))
+            <div class=" alert alert-danger  w-75 m-auto">{!! \Session::get('error') !!}</div>
+            <div class="mb-5"></div>
+        @endif
+        @if(\Session::has('msg'))
+            <div class=" alert alert-danger  w-75 m-auto">{!! \Session::get('msg') !!}</div>
+            <div class="mb-5"></div>
+        @endif
+    </div>
     <div class="container mb-4 pl-5 pr-5">
         <form class="input-group rounded search_input  " id="formSearchTrainee"
               action="{{route('trainee.searchExpired')}}" type="get">
