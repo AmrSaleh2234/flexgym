@@ -84,9 +84,27 @@ class FinanceController extends Controller
     public function day()
     {
 
-        $start = Carbon::createFromTimeString('10:00');
-        $end = Carbon::createFromTimeString('03:00')->addDay();
-        $revenues = revenue::whereDate('created_at', '>=', $start)->whereDate('created_at', '<=', $end)->get();
+        $start = Carbon::createFromTimeString('00:01');
+        $end = Carbon::createFromTimeString('06:00');
+        $now=Carbon::now('EET');
+        if( $now>=$start && $now<=$end)
+        {
+
+            $start2 = Carbon::createFromTimeString('06:00')->subDay();
+            $end2 = Carbon::createFromTimeString('06:00');
+            $revenues = revenue::whereDate('created_at', '>=', $start2)->whereDate('created_at', '<=', $end2)->get();
+
+        }
+        else
+        {
+
+            $start2 = Carbon::createFromTimeString('06:01');
+
+            $end2 = Carbon::createFromTimeString('24:00');
+            $revenues = revenue::whereDate('created_at', '>=', $start2)->whereDate('created_at', '<=', $end2)->get();
+        }
+
+
         return view('finance.day',compact('revenues'));
 
     }
