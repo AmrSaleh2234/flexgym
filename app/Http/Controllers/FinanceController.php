@@ -84,27 +84,29 @@ class FinanceController extends Controller
     public function day()
     {
 
-        $start = Carbon::createFromTimeString('00:01');
-        $end = Carbon::createFromTimeString('06:00');
-        $now=Carbon::now('EET');
-        if( $now>=$start && $now<=$end)
-        {
+//        $start = Carbon::createFromTimeString('00:01');
+//        $end = Carbon::createFromTimeString('06:00');
+//        return Carbon::now('EET')->format('Y-m-d H:i:s') >=$end;
+//        if(Carbon::now('EET')>=$start && Carbon::now('EET')<=$end)
+//        {
+//            $start2 = Carbon::createFromTimeString('06:00')->subDay();
+//            $end2 = Carbon::createFromTimeString('06:00');
+//            $revenues = revenue::whereDate('created_at', '>=', $start2)->whereDate('created_at', '<=', $end2)->get();
+//            return "hello";
+//        }
+//        else
+//        {
+//            $start2 = Carbon::createFromTimeString('06:01');
+//            $end2 = Carbon::createFromTimeString('24:00');
+//            $revenues = revenue::whereDate('created_at', '>=', $start2)->whereDate('created_at', '<=', $end2)->get();
+//        }
+//
+//
+//        return view('finance.day',compact('revenues'));
 
-            $start2 = Carbon::createFromTimeString('06:00')->subDay();
-            $end2 = Carbon::createFromTimeString('06:00');
-            $revenues = revenue::whereDate('created_at', '>=', $start2)->whereDate('created_at', '<=', $end2)->get();
-
-        }
-        else
-        {
-
-            $start2 = Carbon::createFromTimeString('06:01');
-
-            $end2 = Carbon::createFromTimeString('24:00');
-            $revenues = revenue::whereDate('created_at', '>=', $start2)->whereDate('created_at', '<=', $end2)->get();
-        }
-
-
+        $start = Carbon::createFromTimeString('10:00');
+        $end = Carbon::createFromTimeString('03:00')->addDay();
+        $revenues = revenue::whereDate('created_at', '>=', $start)->whereDate('created_at', '<=', $end)->get();
         return view('finance.day',compact('revenues'));
 
     }
