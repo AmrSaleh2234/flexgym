@@ -102,7 +102,7 @@ class TraineeController extends Controller
             'end_date'=>$request->end_date,
             'program'=>$request->program,
         ]);
-        revenue::create(['trainee_id'=>$trainee->id ,'trainer_id'=>auth()->user()->id , 'amount'=>$request->payed]);
+        revenue::create(['trainee_id'=>$id ,'trainer_id'=>auth()->user()->id , 'amount'=>$request->payed]);
 
 
        return redirect()->back()->with('msg', 'trainee created successfully with <span class="text-danger" style="font-size: 20px;font-weight: 600"> id = '.$id.'</span>');
