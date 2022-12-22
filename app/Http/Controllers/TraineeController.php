@@ -175,8 +175,12 @@ class TraineeController extends Controller
                 'program'=>$request->program,
             ]);
         }
-        $trainee->update([
+        if($request->payed > $trainee->payed && $request->end_date == $trainee->end_date && $request->start_date == $trainee->start_date ) // date not change subscrtiption
+        {
+            revenue::create(['trainee_id'=>$trainee->id ,'trainer_id'=>auth()->user()->id , 'amount'=>$request->payed-$trainee->payed]);
+        }
 
+        $trainee->update([
             'name' => $request->name,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
