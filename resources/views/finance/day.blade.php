@@ -29,8 +29,12 @@
             <tbody>
             @php
                 $i=1;
+                $sum =0 ;
             @endphp
             @foreach($revenues as $item)
+                @php
+                $sum+=$item->amount;
+                @endphp
                 <tr>
                     <td>{{$i++}}</td>
                     <td>{{$item->amount}}</td>
@@ -54,7 +58,11 @@
 
             </tbody>
         </table>
-
+ <div class="d-flex justify-content-center">
+     <span style="font-size: 25px">
+         المجموع : {{$sum }} جم
+     </span>
+ </div>
     </div>
 
 @stop
