@@ -105,13 +105,14 @@
                             سيدات
                         @endif()
                     </td>
+                    @if(auth()->user()->role ==0)
 
+                        @if($item->updater == "Amr Saleh")
+                            <td style="color: #245f9f">unknown</td>
+                        @else
 
-                    @if($item->updater == "Amr Saleh")
-                        <td style="color: #245f9f">unknown</td>
-                    @else
-
-                        <td style="color: #245f9f">{{$item->updater}}</td>
+                            <td style="color: #245f9f">{{$item->updater}}</td>
+                        @endif
                     @endif
 
 
@@ -120,12 +121,12 @@
                                 data-id="{{$item->id}}" data-not_payed="{{$item->not_payed}}" data-toggle="modal"
                                 data-target="#exampleModal"><i class="fa-solid fa-sack-dollar"></i></button>
 
-                        @if(auth()->user()->role ==0)
-                            <a class="btn btn-primary "
-                               style="  cursor: pointer;margin-bottom: 10px;margin-right: 10px;"
-                               href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i>
-                            </a>
 
+                        <a class="btn btn-primary "
+                           style="  cursor: pointer;margin-bottom: 10px;margin-right: 10px;"
+                           href="{{route('trainee.edit',$item)}}"><i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                        @if(auth()->user()->role ==0)
                             <a class="btn btn-danger "
                                style="  cursor: pointer; margin-right: 10px;margin-bottom: 10px"
                                href="{{route('trainee.delete',$item)}}"><i class="fa-solid fa-trash"></i></a>
